@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
         - name: kubenews
-          image: rendellarruda/kube-news:v1
+          image: rendellarruda/kube-news:v2
           ports:
             - containerPort: 8080
           env:
