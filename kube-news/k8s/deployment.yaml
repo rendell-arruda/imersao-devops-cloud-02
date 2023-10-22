@@ -24,4 +24,14 @@ spec:
             - name: POSTGRES_DB
               value: kubenews
 ---
-
+# Path: kube-news/k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    app: postgre
+  ports:
+    - port: 5432
+      targetPort: 5432
