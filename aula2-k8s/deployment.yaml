@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # versão da api
+kind: Deployment # tipo do recurso
+metadata: # metadados do recurso
+  name: web-page # nome do recurso
+spec: # especificacao do deployment
+  replicas: 3 # numero de replicas
+  selector:
+    matchLabels: # labels para selecionar os pods
+      app: meudeployment
+  template: # template do pod
+    metadata: # metadados do pod
+      labels: # labels do pod
+        app: meudeployment # label do pod
+    spec: # especificacao do pod
+      containers:
+        - name: web # nome do container
+          image: fabricioveronez/web-page:green # imagem do c ontainer
+          ports:
+            - containerPort: 80 # porta do container
+
